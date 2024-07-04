@@ -1,6 +1,6 @@
-import funciones_juan_olguin as fn
+import funciones_juan_olguin_009V as fn
 registros = []
-
+despachos = []
 opciones = {
     1: fn.registro,
     2: fn.listar,
@@ -25,7 +25,7 @@ while True:
             break
 
         if opc in opciones:
-            opciones[opc](registros)
+            opciones[opc](registros, despachos)
         else:
             print("Opcion ingresada no válida")
 

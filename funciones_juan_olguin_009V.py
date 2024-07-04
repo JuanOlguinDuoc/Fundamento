@@ -1,4 +1,4 @@
-def registro (registros):
+def registro (registros, despachos):
     nombre          = ""
     apellido        = ""
     direccion       = ""
@@ -56,7 +56,7 @@ def registro (registros):
 """)
 
 
-def listar(registros):
+def listar(registros, despachos):
     for registro in range(len(registros)):
         paciente = registros[registro]
         print(f"""
@@ -70,18 +70,23 @@ def listar(registros):
         
 
         
-def despacho(registros):
+def despacho(registros, despachos):
     sector = ["C", "N", "S"]
     opc = ""
+    
     while True:
         if len(opc) == 0:
             opc = input("¿A que sector desea enviar el despacho? (C/N/S): ").upper()
-
-        elif opc in sector:
-            print("Si esta")
-            
-            break
-        else:
-            print("No esta")
+        elif opc not in sector:
+            print("Opcion ingresada no válida")
             opc = input("¿A que sector desea enviar el despacho? (C/N/S): ").upper()
+        else:
+            break
+
+    despachos.append({
+        "Datos" :   registros,
+        "Sector":   opc
+    })
+
             
+    print(despachos)
